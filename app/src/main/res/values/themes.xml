@@ -14,6 +14,10 @@
         <item name="colorSecondaryContainer">@color/melody_secondary_container</item>
         <item name="colorOnSecondaryContainer">@color/melody_on_secondary_container</item>
 
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/melody_surface</item>
+        <item name="colorOnSurface">@color/melody_on_surface</item>
+
         <!-- Status bar -->
         <item name="android:statusBarColor">@color/melody_primary</item>
         <item name="android:navigationBarColor">@color/melody_surface</item>

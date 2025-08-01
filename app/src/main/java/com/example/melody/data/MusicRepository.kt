@@ -1,92 +1,76 @@
 package com.example.melody
 
+import android.content.ContentResolver
 import android.content.Context
 import android.database.Cursor
+import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
 import com.example.melody.data.Song
 
 class MusicRepository(private val context: Context) {
 
+    private val _allSongs = mutableListOf<Song>()
+    val allSongs: List<Song> get() = _allSongs.toList()
+
     companion object {
         private const val TAG = "MusicRepository"
     }
 
-    private val _allSongs = mutableListOf<Song>()
-    val allSongs: List<Song> get() = _allSongs.toList()
-
     fun scanDeviceForMusic() {
-        try {
-            _allSongs.clear()
+        _allSongs.clear()
 
-            val projection = arrayOf(
-                MediaStore.Audio.Media._ID,
-                MediaStore.Audio.Media.TITLE,
-                MediaStore.Audio.Media.ARTIST,
-                MediaStore.Audio.Media.ALBUM,
-                MediaStore.Audio.Media.DATA,
-                MediaStore.Audio.Media.DURATION,
-                MediaStore.Audio.Media.SIZE
-            )
+        val contentResolver: ContentResolver = context.contentResolver
+        val uri: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
 
-            val selection = "${MediaStore.Audio.Media.IS_MUSIC} = 1 AND ${MediaStore.Audio.Media.SIZE} > 0"
-            val sortOrder = "${MediaStore.Audio.Media.TITLE} ASC"
+        val projection = arrayOf(
+            MediaStore.Audio.Media._ID,
+            MediaStore.Audio.Media.TITLE,
+            MediaStore.Audio.Media.ARTIST,
+            MediaStore.Audio.Media.ALBUM,
+            MediaStore.Audio.Media.DATA,
+            MediaStore.Audio.Media.DURATION,
+            MediaStore.Audio.Media.SIZE
+        )
 
-            val cursor: Cursor? = context.contentResolver.query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                projection,
-                selection,
-                null,
-                sortOrder
-            )
+        val selection = "${MediaStore.Audio.Media.IS_MUSIC} = 1"
+        val sortOrder = "${MediaStore.Audio.Media.TITLE} ASC"
 
-            cursor?.use { c ->
-                val idColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)
-                val titleColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
-                val artistColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)
-                val albumColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM)
-                val pathColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
-                val durationColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
-                val sizeColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE)
+        val cursor: Cursor? = contentResolver.query(
+            uri,
+            projection,
+            selection,
+            null,
+            sortOrder
+        )
 
-                while (c.moveToNext()) {
-                    try {
-                        val id = c.getLong(idColumn)
-                        val title = c.getString(titleColumn) ?: "Unknown Title"
-                        val artist = c.getString(artistColumn) ?: "Unknown Artist"
-                        val album = c.getString(albumColumn) ?: "Unknown Album"
-                        val path = c.getString(pathColumn) ?: continue
-                        val duration = c.getLong(durationColumn)
-                        val size = c.getLong(sizeColumn)
+        cursor?.use {
+            val idColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)
+            val titleColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
+            val artistColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)
+            val albumColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM)
+            val pathColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
+            val durationColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
+            val sizeColumn = it.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE)
 
-                        // Skip very small files (likely not real music)
-                        if (size < 1024 * 100) continue // Skip files smaller than 100KB
+            while (it.moveToNext()) {
+                val id = it.getString(idColumn)
+                val title = it.getString(titleColumn) ?: "Unknown Title"
+                val artist = it.getString(artistColumn) ?: "Unknown Artist"
+                val album = it.getString(albumColumn) ?: "Unknown Album"
+                val path = it.getString(pathColumn) ?: ""
+                val duration = it.getLong(durationColumn)
+                val size = it.getLong(sizeColumn)
 
-                        val song = Song(
-                            id = id.toString(),
-                            title = title,
-                            artist = artist,
-                            album = album,
-                            filePath = path,
-                            duration = duration,
-                            size = size
-                        )
-
-                        _allSongs.add(song)
-
-                    } catch (e: Exception) {
-                        Log.w(TAG, "Error processing song entry", e)
-                        continue
-                    }
+                // Only add songs with valid duration and size
+                if (duration > 0 && size > 0) {
+                    val song = Song(id, title, artist, album, path, duration, size)
+                    _allSongs.add(song)
                 }
             }
-
-            Log.d(TAG, "Scan completed. Found ${_allSongs.size} music files")
-
-        } catch (e: Exception) {
-            Log.e(TAG, "Error scanning device for music", e)
-            throw e
         }
+
+        Log.d(TAG, "Scanned ${_allSongs.size} music files")
     }
 
     fun getSongById(id: String): Song? {
@@ -102,11 +86,10 @@ class MusicRepository(private val context: Context) {
     }
 
     fun searchSongs(query: String): List<Song> {
-        val lowercaseQuery = query.lowercase()
         return _allSongs.filter { song ->
-            song.title.lowercase().contains(lowercaseQuery) ||
-                    song.artist.lowercase().contains(lowercaseQuery) ||
-                    song.album.lowercase().contains(lowercaseQuery)
+            song.title.contains(query, ignoreCase = true) ||
+                    song.artist.contains(query, ignoreCase = true) ||
+                    song.album.contains(query, ignoreCase = true)
         }
     }
 }

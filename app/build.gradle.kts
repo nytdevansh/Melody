@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.melody"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -69,8 +69,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
 
-    // Material 3 for Compose
-    implementation("androidx.compose.material3:material3")
+    // Material 3 for Compose - Updated version
+    implementation("androidx.compose.material3:material3:1.2.0")
     implementation("androidx.compose.material:material-icons-extended")
 
     // Compose integration with existing components
@@ -88,6 +88,9 @@ dependencies {
     // AppCompat (still needed for some components)
     implementation("androidx.appcompat:appcompat:1.6.1")
 
+    // Material Design Components (for compatibility)
+    implementation("com.google.android.material:material:1.11.0")
+
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -96,6 +99,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("androidx.compose.material3:material3:1.2.0")
-    implementation("com.google.android.material:material:1.10.0")
 }

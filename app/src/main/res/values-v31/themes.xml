@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Theme for API 31+ (Android 12+) with dynamic colors -->
-    <style name="Theme.Melody" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    <style name="Theme.Melody" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Enable dynamic colors for Android 12+ -->
+        <item name="android:colorPrimary">@android:color/system_accent1_600</item>
+        <item name="colorPrimaryContainer">@android:color/system_accent1_100</item>
+        <item name="android:colorSecondary">@android:color/system_accent2_600</item>
+        <item name="colorSecondaryContainer">@android:color/system_accent2_100</item>
+
+        <!-- Transparent system bars -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowContentTransitions">true</item>
+
+        <!-- Enable edge-to-edge -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>
