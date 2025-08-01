@@ -24,15 +24,16 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.melody.data.Song
 import com.example.melody.service.MusicPlayerService
 import com.example.melody.ui.theme.MelodyTheme
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
@@ -85,6 +86,16 @@ class MainActivity : ComponentActivity() {
 
         musicRepository = MusicRepository(this)
 
+        // Observe songs from database
+        musicRepository?.let { repository ->
+            lifecycleScope.launch {
+                repository.allSongs.collect { songList ->
+                    songs = songList
+                    Log.d(TAG, "Songs updated: ${songList.size}")
+                }
+            }
+        }
+
         setContent {
             MelodyTheme {
                 MelodyApp(
@@ -129,10 +140,9 @@ class MainActivity : ComponentActivity() {
 
     private fun loadSongs() {
         musicRepository?.let { repository ->
-            // First scan the device for music
+            // Scan the device for music (this will update the database)
             repository.scanDeviceForMusic()
-            songs = repository.allSongs
-            Log.d(TAG, "Loaded ${songs.size} songs")
+            Log.d(TAG, "Started scanning for music files")
         }
     }
 

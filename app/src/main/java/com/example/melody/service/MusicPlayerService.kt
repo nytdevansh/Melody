@@ -15,8 +15,10 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.melody.MainActivity
 import com.example.melody.MusicRepository
-import com.example.melody.R
 import com.example.melody.data.Song
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.IOException
 
 class MusicPlayerService : Service(), MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener {
@@ -25,6 +27,7 @@ class MusicPlayerService : Service(), MediaPlayer.OnCompletionListener, MediaPla
     private var currentSong: Song? = null
     private var musicRepository: MusicRepository? = null
     private val binder = MusicPlayerBinder()
+    private val serviceScope = CoroutineScope(Dispatchers.Main)
 
     companion object {
         private const val TAG = "MusicPlayerService"
@@ -72,31 +75,33 @@ class MusicPlayerService : Service(), MediaPlayer.OnCompletionListener, MediaPla
     }
 
     private fun playSong(songId: String) {
-        val song = musicRepository?.getSongById(songId)
-        if (song == null) {
-            Log.e(TAG, "Song not found: $songId")
-            return
-        }
-
-        try {
-            // Release previous MediaPlayer if exists
-            mediaPlayer?.release()
-
-            // Create new MediaPlayer
-            mediaPlayer = MediaPlayer().apply {
-                setDataSource(this@MusicPlayerService, Uri.parse("file://${song.path}"))
-                setOnCompletionListener(this@MusicPlayerService)
-                setOnErrorListener(this@MusicPlayerService)
-                prepareAsync()
-                setOnPreparedListener { mp ->
-                    mp.start()
-                    currentSong = song
-                    startForeground(NOTIFICATION_ID, createNotification())
-                    Log.d(TAG, "Started playing: ${song.title}")
-                }
+        serviceScope.launch {
+            val song = musicRepository?.getSongById(songId)
+            if (song == null) {
+                Log.e(TAG, "Song not found: $songId")
+                return@launch
             }
-        } catch (e: IOException) {
-            Log.e(TAG, "Error playing song: ${e.message}")
+
+            try {
+                // Release previous MediaPlayer if exists
+                mediaPlayer?.release()
+
+                // Create new MediaPlayer
+                mediaPlayer = MediaPlayer().apply {
+                    setDataSource(this@MusicPlayerService, Uri.parse("file://${song.path}"))
+                    setOnCompletionListener(this@MusicPlayerService)
+                    setOnErrorListener(this@MusicPlayerService)
+                    prepareAsync()
+                    setOnPreparedListener { mp ->
+                        mp.start()
+                        currentSong = song
+                        startForeground(NOTIFICATION_ID, createNotification())
+                        Log.d(TAG, "Started playing: ${song.title}")
+                    }
+                }
+            } catch (e: IOException) {
+                Log.e(TAG, "Error playing song: ${e.message}")
+            }
         }
     }
 

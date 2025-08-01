@@ -7,18 +7,48 @@ import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
 import com.example.melody.data.Song
+import com.example.melody.data.MelodyDatabase
+import com.example.melody.data.SongDao
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MusicRepository(private val context: Context) {
 
-    private val _allSongs = mutableListOf<Song>()
-    val allSongs: List<Song> get() = _allSongs.toList()
+    private val database = MelodyDatabase.getDatabase(context)
+    private val songDao: SongDao = database.songDao()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
+
+    // Expose songs as Flow for reactive updates
+    val allSongs: Flow<List<Song>> = songDao.getAllSongs()
+
+    // Get songs synchronously for immediate use
+    suspend fun getAllSongsSync(): List<Song> = songDao.getAllSongsSync()
 
     companion object {
         private const val TAG = "MusicRepository"
     }
 
     fun scanDeviceForMusic() {
-        _allSongs.clear()
+        coroutineScope.launch {
+            try {
+                val scannedSongs = scanMediaStore()
+                if (scannedSongs.isNotEmpty()) {
+                    // Clear existing songs and insert new ones
+                    songDao.deleteAllSongs()
+                    songDao.insertSongs(scannedSongs)
+                    Log.d(TAG, "Saved ${scannedSongs.size} songs to database")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error scanning device for music: ${e.message}")
+            }
+        }
+    }
+
+    private suspend fun scanMediaStore(): List<Song> = withContext(Dispatchers.IO) {
+        val songs = mutableListOf<Song>()
 
         val contentResolver: ContentResolver = context.contentResolver
         val uri: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -65,31 +95,26 @@ class MusicRepository(private val context: Context) {
                 // Only add songs with valid duration and size
                 if (duration > 0 && size > 0) {
                     val song = Song(id, title, artist, album, path, duration, size)
-                    _allSongs.add(song)
+                    songs.add(song)
                 }
             }
         }
 
-        Log.d(TAG, "Scanned ${_allSongs.size} music files")
+        Log.d(TAG, "Scanned ${songs.size} music files from MediaStore")
+        songs
     }
 
-    fun getSongById(id: String): Song? {
-        return _allSongs.find { it.id == id }
-    }
+    suspend fun getSongById(id: String): Song? = songDao.getSongById(id)
 
-    fun getSongsByArtist(artist: String): List<Song> {
-        return _allSongs.filter { it.artist.equals(artist, ignoreCase = true) }
-    }
+    suspend fun getSongsByArtist(artist: String): List<Song> = songDao.getSongsByArtist(artist)
 
-    fun getSongsByAlbum(album: String): List<Song> {
-        return _allSongs.filter { it.album.equals(album, ignoreCase = true) }
-    }
+    suspend fun getSongsByAlbum(album: String): List<Song> = songDao.getSongsByAlbum(album)
 
-    fun searchSongs(query: String): List<Song> {
-        return _allSongs.filter { song ->
-            song.title.contains(query, ignoreCase = true) ||
-                    song.artist.contains(query, ignoreCase = true) ||
-                    song.album.contains(query, ignoreCase = true)
-        }
-    }
+    suspend fun searchSongs(query: String): List<Song> = songDao.searchSongs(query)
+
+    suspend fun getAllArtists(): List<String> = songDao.getAllArtists()
+
+    suspend fun getAllAlbums(): List<String> = songDao.getAllAlbums()
+
+    suspend fun getSongCount(): Int = songDao.getSongCount()
 }
