@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 Color System -->
+
+    <!-- Primary Colors -->
+    <color name="melody_primary">#6750A4</color>
+    <color name="melody_on_primary">#FFFFFF</color>
+    <color name="melody_primary_container">#EADDFF</color>
+    <color name="melody_on_primary_container">#21005D</color>
+
+    <!-- Secondary Colors -->
+    <color name="melody_secondary">#625B71</color>
+    <color name="melody_on_secondary">#FFFFFF</color>
+    <color name="melody_secondary_container">#E8DEF8</color>
+    <color name="melody_on_secondary_container">#1D192B</color>
+
+    <!-- Tertiary Colors -->
+    <color name="melody_tertiary">#7D5260</color>
+    <color name="melody_on_tertiary">#FFFFFF</color>
+    <color name="melody_tertiary_container">#FFD8E4</color>
+    <color name="melody_on_tertiary_container">#31111D</color>
+
+    <!-- Error Colors -->
+    <color name="melody_error">#BA1A1A</color>
+    <color name="melody_on_error">#FFFFFF</color>
+    <color name="melody_error_container">#FFDAD6</color>
+    <color name="melody_on_error_container">#410002</color>
+
+    <!-- Neutral Colors -->
+    <color name="melody_background">#FFFBFE</color>
+    <color name="melody_on_background">#1C1B1F</color>
+    <color name="melody_surface">#FFFBFE</color>
+    <color name="melody_on_surface">#1C1B1F</color>
+    <color name="melody_surface_variant">#E7E0EC</color>
+    <color name="melody_on_surface_variant">#49454F</color>
+
+    <!-- Outline Colors -->
+    <color name="melody_outline">#79747E</color>
+    <color name="melody_outline_variant">#CAC4D0</color>
+
+    <!-- Legacy colors for compatibility (can be removed later) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
