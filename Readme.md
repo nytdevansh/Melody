@@ -23,10 +23,6 @@ A modern Android music player application built with Kotlin that scans your devi
 - **Foreground Service**: Music playback continues in background with notification
 - **Memory Efficient**: Optimized music scanning and playback
 
-## Screenshots
-
-*Add screenshots of your app here*
-
 ## Requirements
 
 ### Minimum Requirements
@@ -277,8 +273,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support, feature requests, or bug reports:
 - **Issues**: Open an issue on GitHub
-- **Email**: your.email@example.com
+- **Email**: yadavdevansh456dev@gmail.com
 - **Documentation**: Check this README and code comments
+
+## Collaborate
+
+For colaboration feel free to email me.
 
 ---
 
