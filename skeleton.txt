@@ -1,0 +1,1152 @@
+.
+├── app
+│   ├── build
+│   │   ├── generated
+│   │   │   ├── ap_generated_sources
+│   │   │   │   ├── debug
+│   │   │   │   │   └── out
+│   │   │   │   └── release
+│   │   │   │       └── out
+│   │   │   ├── res
+│   │   │   │   ├── pngs
+│   │   │   │   │   ├── debug
+│   │   │   │   │   └── release
+│   │   │   │   └── resValues
+│   │   │   │       ├── androidTest
+│   │   │   │       │   └── debug
+│   │   │   │       ├── debug
+│   │   │   │       └── release
+│   │   │   └── source
+│   │   │       ├── kapt
+│   │   │       │   ├── debug
+│   │   │       │   │   └── com
+│   │   │       │   │       └── example
+│   │   │       │   │           └── melody
+│   │   │       │   │               └── data
+│   │   │       │   ├── debugUnitTest
+│   │   │       │   ├── release
+│   │   │       │   │   └── com
+│   │   │       │   │       └── example
+│   │   │       │   │           └── melody
+│   │   │       │   │               └── data
+│   │   │       │   └── releaseUnitTest
+│   │   │       └── kaptKotlin
+│   │   │           ├── debug
+│   │   │           ├── debugUnitTest
+│   │   │           ├── release
+│   │   │           └── releaseUnitTest
+│   │   ├── intermediates
+│   │   │   ├── aar_metadata_check
+│   │   │   │   ├── debug
+│   │   │   │   │   └── checkDebugAarMetadata
+│   │   │   │   └── release
+│   │   │   │       └── checkReleaseAarMetadata
+│   │   │   ├── android_test_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugAndroidTestLintModel
+│   │   │   ├── android_test_lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── annotation_processor_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── javaPreCompileDebug
+│   │   │   │   ├── debugUnitTest
+│   │   │   │   │   └── javaPreCompileDebugUnitTest
+│   │   │   │   ├── release
+│   │   │   │   │   └── javaPreCompileRelease
+│   │   │   │   └── releaseUnitTest
+│   │   │   │       └── javaPreCompileReleaseUnitTest
+│   │   │   ├── apk
+│   │   │   │   └── debug
+│   │   │   ├── apk_ide_redirect_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── createDebugApkListingFileRedirect
+│   │   │   │   └── release
+│   │   │   │       └── createReleaseApkListingFileRedirect
+│   │   │   ├── app_metadata
+│   │   │   │   ├── debug
+│   │   │   │   │   └── writeDebugAppMetadata
+│   │   │   │   └── release
+│   │   │   │       └── writeReleaseAppMetadata
+│   │   │   ├── assets
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugAssets
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseAssets
+│   │   │   ├── binary_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   ├── binary_art_profile_metadata
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   ├── combined_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   ├── compatible_screen_manifest
+│   │   │   │   ├── debug
+│   │   │   │   │   └── createDebugCompatibleScreenManifests
+│   │   │   │   └── release
+│   │   │   │       └── createReleaseCompatibleScreenManifests
+│   │   │   ├── compile_and_runtime_not_namespaced_r_class_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── compile_app_classes_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── bundleDebugClassesToCompileJar
+│   │   │   │   └── release
+│   │   │   │       └── bundleReleaseClassesToCompileJar
+│   │   │   ├── compressed_assets
+│   │   │   │   ├── debug
+│   │   │   │   │   └── compressDebugAssets
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── compressReleaseAssets
+│   │   │   │           └── out
+│   │   │   ├── d8_metadata
+│   │   │   │   └── release
+│   │   │   │       └── mergeDexRelease
+│   │   │   ├── data_binding_layout_info_type_merge
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── data_binding_layout_info_type_package
+│   │   │   │   ├── debug
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── packageReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── default_proguard_files
+│   │   │   │   └── global
+│   │   │   ├── desugar_graph
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── currentProject
+│   │   │   │   │           │   ├── dirs_bucket_0
+│   │   │   │   │           │   ├── dirs_bucket_1
+│   │   │   │   │           │   ├── dirs_bucket_2
+│   │   │   │   │           │   ├── dirs_bucket_3
+│   │   │   │   │           │   ├── jar_41729a180972ee8f5ee11f9d0f3b7ce5c8f3bda4b8082a72523713d1056a0493_bucket_0
+│   │   │   │   │           │   ├── jar_41729a180972ee8f5ee11f9d0f3b7ce5c8f3bda4b8082a72523713d1056a0493_bucket_1
+│   │   │   │   │           │   ├── jar_41729a180972ee8f5ee11f9d0f3b7ce5c8f3bda4b8082a72523713d1056a0493_bucket_2
+│   │   │   │   │           │   └── jar_41729a180972ee8f5ee11f9d0f3b7ce5c8f3bda4b8082a72523713d1056a0493_bucket_3
+│   │   │   │   │           ├── externalLibs
+│   │   │   │   │           ├── mixedScopes
+│   │   │   │   │           └── otherProjects
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   │               ├── currentProject
+│   │   │   │               │   ├── dirs_bucket_0
+│   │   │   │               │   ├── dirs_bucket_1
+│   │   │   │               │   ├── dirs_bucket_2
+│   │   │   │               │   ├── dirs_bucket_3
+│   │   │   │               │   ├── jar_781dcccbed297140ebf2926c602deb98826302f79bf69b8cfedd48f26aa123fa_bucket_0
+│   │   │   │               │   ├── jar_781dcccbed297140ebf2926c602deb98826302f79bf69b8cfedd48f26aa123fa_bucket_1
+│   │   │   │               │   ├── jar_781dcccbed297140ebf2926c602deb98826302f79bf69b8cfedd48f26aa123fa_bucket_2
+│   │   │   │               │   └── jar_781dcccbed297140ebf2926c602deb98826302f79bf69b8cfedd48f26aa123fa_bucket_3
+│   │   │   │               ├── externalLibs
+│   │   │   │               ├── mixedScopes
+│   │   │   │               └── otherProjects
+│   │   │   ├── dex
+│   │   │   │   ├── debug
+│   │   │   │   │   ├── mergeExtDexDebug
+│   │   │   │   │   ├── mergeLibDexDebug
+│   │   │   │   │   │   ├── 0
+│   │   │   │   │   │   ├── 1
+│   │   │   │   │   │   ├── 10
+│   │   │   │   │   │   ├── 11
+│   │   │   │   │   │   ├── 12
+│   │   │   │   │   │   ├── 13
+│   │   │   │   │   │   ├── 14
+│   │   │   │   │   │   ├── 15
+│   │   │   │   │   │   ├── 2
+│   │   │   │   │   │   ├── 3
+│   │   │   │   │   │   ├── 4
+│   │   │   │   │   │   ├── 5
+│   │   │   │   │   │   ├── 6
+│   │   │   │   │   │   ├── 7
+│   │   │   │   │   │   ├── 8
+│   │   │   │   │   │   └── 9
+│   │   │   │   │   └── mergeProjectDexDebug
+│   │   │   │   │       ├── 0
+│   │   │   │   │       ├── 1
+│   │   │   │   │       ├── 10
+│   │   │   │   │       ├── 11
+│   │   │   │   │       ├── 12
+│   │   │   │   │       ├── 13
+│   │   │   │   │       ├── 14
+│   │   │   │   │       ├── 15
+│   │   │   │   │       ├── 2
+│   │   │   │   │       ├── 3
+│   │   │   │   │       ├── 4
+│   │   │   │   │       ├── 5
+│   │   │   │   │       ├── 6
+│   │   │   │   │       ├── 7
+│   │   │   │   │       ├── 8
+│   │   │   │   │       └── 9
+│   │   │   │   └── release
+│   │   │   │       └── mergeDexRelease
+│   │   │   ├── dex_archive_input_jar_hashes
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   ├── dex_metadata_directory
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   │           ├── 0
+│   │   │   │           └── 1
+│   │   │   ├── dex_number_of_buckets_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   ├── duplicate_classes_check
+│   │   │   │   ├── debug
+│   │   │   │   │   └── checkDebugDuplicateClasses
+│   │   │   │   └── release
+│   │   │   │       └── checkReleaseDuplicateClasses
+│   │   │   ├── external_file_lib_dex_archives
+│   │   │   │   ├── debug
+│   │   │   │   │   └── desugarDebugFileDependencies
+│   │   │   │   └── release
+│   │   │   │       └── desugarReleaseFileDependencies
+│   │   │   ├── external_libs_dex
+│   │   │   │   └── release
+│   │   │   │       └── mergeExtDexRelease
+│   │   │   ├── external_libs_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── external_libs_dex_archive_with_artifact_transforms
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_dex
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseGlobalSynthetics
+│   │   │   ├── global_synthetics_external_lib
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_external_libs_artifact_transform
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_file_lib
+│   │   │   │   └── release
+│   │   │   │       └── desugarReleaseFileDependencies
+│   │   │   ├── global_synthetics_mixed_scope
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_project
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_subproject
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── incremental
+│   │   │   │   ├── debug
+│   │   │   │   │   ├── mergeDebugResources
+│   │   │   │   │   │   ├── merged.dir
+│   │   │   │   │   │   │   ├── values
+│   │   │   │   │   │   │   ├── values-af
+│   │   │   │   │   │   │   ├── values-am
+│   │   │   │   │   │   │   ├── values-ar
+│   │   │   │   │   │   │   ├── values-as
+│   │   │   │   │   │   │   ├── values-az
+│   │   │   │   │   │   │   ├── values-b+es+419
+│   │   │   │   │   │   │   ├── values-b+sr+Latn
+│   │   │   │   │   │   │   ├── values-be
+│   │   │   │   │   │   │   ├── values-bg
+│   │   │   │   │   │   │   ├── values-bn
+│   │   │   │   │   │   │   ├── values-bs
+│   │   │   │   │   │   │   ├── values-ca
+│   │   │   │   │   │   │   ├── values-cs
+│   │   │   │   │   │   │   ├── values-da
+│   │   │   │   │   │   │   ├── values-de
+│   │   │   │   │   │   │   ├── values-el
+│   │   │   │   │   │   │   ├── values-en-rAU
+│   │   │   │   │   │   │   ├── values-en-rCA
+│   │   │   │   │   │   │   ├── values-en-rGB
+│   │   │   │   │   │   │   ├── values-en-rIN
+│   │   │   │   │   │   │   ├── values-en-rXC
+│   │   │   │   │   │   │   ├── values-es
+│   │   │   │   │   │   │   ├── values-es-rUS
+│   │   │   │   │   │   │   ├── values-et
+│   │   │   │   │   │   │   ├── values-eu
+│   │   │   │   │   │   │   ├── values-fa
+│   │   │   │   │   │   │   ├── values-fi
+│   │   │   │   │   │   │   ├── values-fr
+│   │   │   │   │   │   │   ├── values-fr-rCA
+│   │   │   │   │   │   │   ├── values-gl
+│   │   │   │   │   │   │   ├── values-gu
+│   │   │   │   │   │   │   ├── values-h320dp-port-v13
+│   │   │   │   │   │   │   ├── values-h360dp-land-v13
+│   │   │   │   │   │   │   ├── values-h480dp-land-v13
+│   │   │   │   │   │   │   ├── values-h550dp-port-v13
+│   │   │   │   │   │   │   ├── values-h720dp-v13
+│   │   │   │   │   │   │   ├── values-hdpi-v4
+│   │   │   │   │   │   │   ├── values-hi
+│   │   │   │   │   │   │   ├── values-hr
+│   │   │   │   │   │   │   ├── values-hu
+│   │   │   │   │   │   │   ├── values-hy
+│   │   │   │   │   │   │   ├── values-in
+│   │   │   │   │   │   │   ├── values-is
+│   │   │   │   │   │   │   ├── values-it
+│   │   │   │   │   │   │   ├── values-iw
+│   │   │   │   │   │   │   ├── values-ja
+│   │   │   │   │   │   │   ├── values-ka
+│   │   │   │   │   │   │   ├── values-kk
+│   │   │   │   │   │   │   ├── values-km
+│   │   │   │   │   │   │   ├── values-kn
+│   │   │   │   │   │   │   ├── values-ko
+│   │   │   │   │   │   │   ├── values-ky
+│   │   │   │   │   │   │   ├── values-land
+│   │   │   │   │   │   │   ├── values-large-v4
+│   │   │   │   │   │   │   ├── values-ldltr-v21
+│   │   │   │   │   │   │   ├── values-ldrtl-v17
+│   │   │   │   │   │   │   ├── values-lo
+│   │   │   │   │   │   │   ├── values-lt
+│   │   │   │   │   │   │   ├── values-lv
+│   │   │   │   │   │   │   ├── values-mk
+│   │   │   │   │   │   │   ├── values-ml
+│   │   │   │   │   │   │   ├── values-mn
+│   │   │   │   │   │   │   ├── values-mr
+│   │   │   │   │   │   │   ├── values-ms
+│   │   │   │   │   │   │   ├── values-my
+│   │   │   │   │   │   │   ├── values-nb
+│   │   │   │   │   │   │   ├── values-ne
+│   │   │   │   │   │   │   ├── values-night-v8
+│   │   │   │   │   │   │   ├── values-nl
+│   │   │   │   │   │   │   ├── values-or
+│   │   │   │   │   │   │   ├── values-pa
+│   │   │   │   │   │   │   ├── values-pl
+│   │   │   │   │   │   │   ├── values-port
+│   │   │   │   │   │   │   ├── values-pt
+│   │   │   │   │   │   │   ├── values-pt-rBR
+│   │   │   │   │   │   │   ├── values-pt-rPT
+│   │   │   │   │   │   │   ├── values-ro
+│   │   │   │   │   │   │   ├── values-ru
+│   │   │   │   │   │   │   ├── values-si
+│   │   │   │   │   │   │   ├── values-sk
+│   │   │   │   │   │   │   ├── values-sl
+│   │   │   │   │   │   │   ├── values-small-v4
+│   │   │   │   │   │   │   ├── values-sq
+│   │   │   │   │   │   │   ├── values-sr
+│   │   │   │   │   │   │   ├── values-sv
+│   │   │   │   │   │   │   ├── values-sw
+│   │   │   │   │   │   │   ├── values-sw600dp-v13
+│   │   │   │   │   │   │   ├── values-ta
+│   │   │   │   │   │   │   ├── values-te
+│   │   │   │   │   │   │   ├── values-th
+│   │   │   │   │   │   │   ├── values-tl
+│   │   │   │   │   │   │   ├── values-tr
+│   │   │   │   │   │   │   ├── values-uk
+│   │   │   │   │   │   │   ├── values-ur
+│   │   │   │   │   │   │   ├── values-uz
+│   │   │   │   │   │   │   ├── values-v16
+│   │   │   │   │   │   │   ├── values-v17
+│   │   │   │   │   │   │   ├── values-v18
+│   │   │   │   │   │   │   ├── values-v21
+│   │   │   │   │   │   │   ├── values-v22
+│   │   │   │   │   │   │   ├── values-v23
+│   │   │   │   │   │   │   ├── values-v24
+│   │   │   │   │   │   │   ├── values-v25
+│   │   │   │   │   │   │   ├── values-v26
+│   │   │   │   │   │   │   ├── values-v28
+│   │   │   │   │   │   │   ├── values-v31
+│   │   │   │   │   │   │   ├── values-v34
+│   │   │   │   │   │   │   ├── values-vi
+│   │   │   │   │   │   │   ├── values-w320dp-land-v13
+│   │   │   │   │   │   │   ├── values-w360dp-port-v13
+│   │   │   │   │   │   │   ├── values-w400dp-port-v13
+│   │   │   │   │   │   │   ├── values-w600dp-land-v13
+│   │   │   │   │   │   │   ├── values-watch-v20
+│   │   │   │   │   │   │   ├── values-watch-v21
+│   │   │   │   │   │   │   ├── values-xlarge-v4
+│   │   │   │   │   │   │   ├── values-zh-rCN
+│   │   │   │   │   │   │   ├── values-zh-rHK
+│   │   │   │   │   │   │   ├── values-zh-rTW
+│   │   │   │   │   │   │   └── values-zu
+│   │   │   │   │   │   └── stripped.dir
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       ├── merged.dir
+│   │   │   │   │       │   ├── values
+│   │   │   │   │       │   └── values-v31
+│   │   │   │   │       └── stripped.dir
+│   │   │   │   ├── debug-mergeJavaRes
+│   │   │   │   │   └── zip-cache
+│   │   │   │   ├── lintAnalyzeDebug
+│   │   │   │   ├── lintAnalyzeDebugAndroidTest
+│   │   │   │   ├── lintAnalyzeDebugUnitTest
+│   │   │   │   ├── lintVitalAnalyzeRelease
+│   │   │   │   ├── mergeDebugAssets
+│   │   │   │   ├── mergeDebugJniLibFolders
+│   │   │   │   ├── mergeDebugShaders
+│   │   │   │   ├── mergeReleaseAssets
+│   │   │   │   ├── mergeReleaseJniLibFolders
+│   │   │   │   ├── mergeReleaseShaders
+│   │   │   │   ├── packageDebug
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── debug
+│   │   │   │   │           └── zip-cache
+│   │   │   │   ├── packageRelease
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── release
+│   │   │   │   │           └── zip-cache
+│   │   │   │   ├── release
+│   │   │   │   │   ├── mergeReleaseResources
+│   │   │   │   │   │   ├── merged.dir
+│   │   │   │   │   │   │   ├── values
+│   │   │   │   │   │   │   ├── values-af
+│   │   │   │   │   │   │   ├── values-am
+│   │   │   │   │   │   │   ├── values-ar
+│   │   │   │   │   │   │   ├── values-as
+│   │   │   │   │   │   │   ├── values-az
+│   │   │   │   │   │   │   ├── values-b+es+419
+│   │   │   │   │   │   │   ├── values-b+sr+Latn
+│   │   │   │   │   │   │   ├── values-be
+│   │   │   │   │   │   │   ├── values-bg
+│   │   │   │   │   │   │   ├── values-bn
+│   │   │   │   │   │   │   ├── values-bs
+│   │   │   │   │   │   │   ├── values-ca
+│   │   │   │   │   │   │   ├── values-cs
+│   │   │   │   │   │   │   ├── values-da
+│   │   │   │   │   │   │   ├── values-de
+│   │   │   │   │   │   │   ├── values-el
+│   │   │   │   │   │   │   ├── values-en-rAU
+│   │   │   │   │   │   │   ├── values-en-rCA
+│   │   │   │   │   │   │   ├── values-en-rGB
+│   │   │   │   │   │   │   ├── values-en-rIN
+│   │   │   │   │   │   │   ├── values-en-rXC
+│   │   │   │   │   │   │   ├── values-es
+│   │   │   │   │   │   │   ├── values-es-rUS
+│   │   │   │   │   │   │   ├── values-et
+│   │   │   │   │   │   │   ├── values-eu
+│   │   │   │   │   │   │   ├── values-fa
+│   │   │   │   │   │   │   ├── values-fi
+│   │   │   │   │   │   │   ├── values-fr
+│   │   │   │   │   │   │   ├── values-fr-rCA
+│   │   │   │   │   │   │   ├── values-gl
+│   │   │   │   │   │   │   ├── values-gu
+│   │   │   │   │   │   │   ├── values-h320dp-port-v13
+│   │   │   │   │   │   │   ├── values-h360dp-land-v13
+│   │   │   │   │   │   │   ├── values-h480dp-land-v13
+│   │   │   │   │   │   │   ├── values-h550dp-port-v13
+│   │   │   │   │   │   │   ├── values-h720dp-v13
+│   │   │   │   │   │   │   ├── values-hdpi-v4
+│   │   │   │   │   │   │   ├── values-hi
+│   │   │   │   │   │   │   ├── values-hr
+│   │   │   │   │   │   │   ├── values-hu
+│   │   │   │   │   │   │   ├── values-hy
+│   │   │   │   │   │   │   ├── values-in
+│   │   │   │   │   │   │   ├── values-is
+│   │   │   │   │   │   │   ├── values-it
+│   │   │   │   │   │   │   ├── values-iw
+│   │   │   │   │   │   │   ├── values-ja
+│   │   │   │   │   │   │   ├── values-ka
+│   │   │   │   │   │   │   ├── values-kk
+│   │   │   │   │   │   │   ├── values-km
+│   │   │   │   │   │   │   ├── values-kn
+│   │   │   │   │   │   │   ├── values-ko
+│   │   │   │   │   │   │   ├── values-ky
+│   │   │   │   │   │   │   ├── values-land
+│   │   │   │   │   │   │   ├── values-large-v4
+│   │   │   │   │   │   │   ├── values-ldltr-v21
+│   │   │   │   │   │   │   ├── values-ldrtl-v17
+│   │   │   │   │   │   │   ├── values-lo
+│   │   │   │   │   │   │   ├── values-lt
+│   │   │   │   │   │   │   ├── values-lv
+│   │   │   │   │   │   │   ├── values-mk
+│   │   │   │   │   │   │   ├── values-ml
+│   │   │   │   │   │   │   ├── values-mn
+│   │   │   │   │   │   │   ├── values-mr
+│   │   │   │   │   │   │   ├── values-ms
+│   │   │   │   │   │   │   ├── values-my
+│   │   │   │   │   │   │   ├── values-nb
+│   │   │   │   │   │   │   ├── values-ne
+│   │   │   │   │   │   │   ├── values-night-v8
+│   │   │   │   │   │   │   ├── values-nl
+│   │   │   │   │   │   │   ├── values-or
+│   │   │   │   │   │   │   ├── values-pa
+│   │   │   │   │   │   │   ├── values-pl
+│   │   │   │   │   │   │   ├── values-port
+│   │   │   │   │   │   │   ├── values-pt
+│   │   │   │   │   │   │   ├── values-pt-rBR
+│   │   │   │   │   │   │   ├── values-pt-rPT
+│   │   │   │   │   │   │   ├── values-ro
+│   │   │   │   │   │   │   ├── values-ru
+│   │   │   │   │   │   │   ├── values-si
+│   │   │   │   │   │   │   ├── values-sk
+│   │   │   │   │   │   │   ├── values-sl
+│   │   │   │   │   │   │   ├── values-small-v4
+│   │   │   │   │   │   │   ├── values-sq
+│   │   │   │   │   │   │   ├── values-sr
+│   │   │   │   │   │   │   ├── values-sv
+│   │   │   │   │   │   │   ├── values-sw
+│   │   │   │   │   │   │   ├── values-sw600dp-v13
+│   │   │   │   │   │   │   ├── values-ta
+│   │   │   │   │   │   │   ├── values-te
+│   │   │   │   │   │   │   ├── values-th
+│   │   │   │   │   │   │   ├── values-tl
+│   │   │   │   │   │   │   ├── values-tr
+│   │   │   │   │   │   │   ├── values-uk
+│   │   │   │   │   │   │   ├── values-ur
+│   │   │   │   │   │   │   ├── values-uz
+│   │   │   │   │   │   │   ├── values-v16
+│   │   │   │   │   │   │   ├── values-v17
+│   │   │   │   │   │   │   ├── values-v18
+│   │   │   │   │   │   │   ├── values-v21
+│   │   │   │   │   │   │   ├── values-v22
+│   │   │   │   │   │   │   ├── values-v23
+│   │   │   │   │   │   │   ├── values-v24
+│   │   │   │   │   │   │   ├── values-v25
+│   │   │   │   │   │   │   ├── values-v26
+│   │   │   │   │   │   │   ├── values-v28
+│   │   │   │   │   │   │   ├── values-v31
+│   │   │   │   │   │   │   ├── values-v34
+│   │   │   │   │   │   │   ├── values-vi
+│   │   │   │   │   │   │   ├── values-w320dp-land-v13
+│   │   │   │   │   │   │   ├── values-w360dp-port-v13
+│   │   │   │   │   │   │   ├── values-w400dp-port-v13
+│   │   │   │   │   │   │   ├── values-w600dp-land-v13
+│   │   │   │   │   │   │   ├── values-watch-v20
+│   │   │   │   │   │   │   ├── values-watch-v21
+│   │   │   │   │   │   │   ├── values-xlarge-v4
+│   │   │   │   │   │   │   ├── values-zh-rCN
+│   │   │   │   │   │   │   ├── values-zh-rHK
+│   │   │   │   │   │   │   ├── values-zh-rTW
+│   │   │   │   │   │   │   └── values-zu
+│   │   │   │   │   │   └── stripped.dir
+│   │   │   │   │   └── packageReleaseResources
+│   │   │   │   │       ├── merged.dir
+│   │   │   │   │       │   ├── values
+│   │   │   │   │       │   └── values-v31
+│   │   │   │   │       └── stripped.dir
+│   │   │   │   └── release-mergeJavaRes
+│   │   │   │       └── zip-cache
+│   │   │   ├── java_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugJavaRes
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── com
+│   │   │   │   │           │   └── example
+│   │   │   │   │           │       └── melody
+│   │   │   │   │           │           ├── adapter
+│   │   │   │   │           │           ├── data
+│   │   │   │   │           │           ├── service
+│   │   │   │   │           │           └── ui
+│   │   │   │   │           │               └── theme
+│   │   │   │   │           └── META-INF
+│   │   │   │   ├── debugUnitTest
+│   │   │   │   │   └── processDebugUnitTestJavaRes
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── com
+│   │   │   │   │           │   └── example
+│   │   │   │   │           │       └── melody
+│   │   │   │   │           └── META-INF
+│   │   │   │   ├── release
+│   │   │   │   │   └── processReleaseJavaRes
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── com
+│   │   │   │   │           │   └── example
+│   │   │   │   │           │       └── melody
+│   │   │   │   │           │           ├── adapter
+│   │   │   │   │           │           ├── data
+│   │   │   │   │           │           ├── service
+│   │   │   │   │           │           └── ui
+│   │   │   │   │           │               └── theme
+│   │   │   │   │           └── META-INF
+│   │   │   │   └── releaseUnitTest
+│   │   │   │       └── processReleaseUnitTestJavaRes
+│   │   │   │           └── out
+│   │   │   │               ├── com
+│   │   │   │               │   └── example
+│   │   │   │               │       └── melody
+│   │   │   │               └── META-INF
+│   │   │   ├── javac
+│   │   │   │   ├── debug
+│   │   │   │   │   └── compileDebugJavaWithJavac
+│   │   │   │   │       └── classes
+│   │   │   │   │           └── com
+│   │   │   │   │               └── example
+│   │   │   │   │                   └── melody
+│   │   │   │   │                       └── data
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseJavaWithJavac
+│   │   │   │           └── classes
+│   │   │   │               └── com
+│   │   │   │                   └── example
+│   │   │   │                       └── melody
+│   │   │   │                           └── data
+│   │   │   ├── linked_resources_binary_format
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── lint_intermediate_text_report
+│   │   │   │   └── debug
+│   │   │   │       └── lintReportDebug
+│   │   │   ├── lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebug
+│   │   │   │           └── out
+│   │   │   ├── lint_report_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugLintReportModel
+│   │   │   ├── lint_return_value
+│   │   │   │   └── debug
+│   │   │   │       └── lintReportDebug
+│   │   │   ├── lint_vital_partial_results
+│   │   │   │   └── release
+│   │   │   │       └── lintVitalAnalyzeRelease
+│   │   │   │           └── out
+│   │   │   ├── lint_vital_report_lint_model
+│   │   │   │   └── release
+│   │   │   │       └── generateReleaseLintVitalReportModel
+│   │   │   ├── lint-cache
+│   │   │   │   ├── lintAnalyzeDebug
+│   │   │   │   │   ├── maven-versions
+│   │   │   │   │   │   ├── plugins.gradle.org
+│   │   │   │   │   │   │   └── org
+│   │   │   │   │   │   │       └── jetbrains
+│   │   │   │   │   │   │           └── kotlin
+│   │   │   │   │   │   │               ├── android
+│   │   │   │   │   │   │               │   └── org.jetbrains.kotlin.android.gradle.plugin
+│   │   │   │   │   │   │               └── kapt
+│   │   │   │   │   │   │                   └── org.jetbrains.kotlin.kapt.gradle.plugin
+│   │   │   │   │   │   ├── repo.gradle.org
+│   │   │   │   │   │   └── repo1.maven.org
+│   │   │   │   │   │       ├── junit
+│   │   │   │   │   │       │   └── junit
+│   │   │   │   │   │       └── org
+│   │   │   │   │   │           ├── jetbrains
+│   │   │   │   │   │           │   └── kotlinx
+│   │   │   │   │   │           │       └── kotlinx-coroutines-android
+│   │   │   │   │   │           └── nanohttpd
+│   │   │   │   │   │               └── nanohttpd
+│   │   │   │   │   ├── maven.google
+│   │   │   │   │   │   ├── androidx
+│   │   │   │   │   │   │   ├── activity
+│   │   │   │   │   │   │   ├── appcompat
+│   │   │   │   │   │   │   ├── compose
+│   │   │   │   │   │   │   │   ├── material3
+│   │   │   │   │   │   │   │   └── runtime
+│   │   │   │   │   │   │   ├── core
+│   │   │   │   │   │   │   ├── lifecycle
+│   │   │   │   │   │   │   ├── media
+│   │   │   │   │   │   │   ├── room
+│   │   │   │   │   │   │   └── test
+│   │   │   │   │   │   │       ├── espresso
+│   │   │   │   │   │   │       └── ext
+│   │   │   │   │   │   └── com
+│   │   │   │   │   │       ├── android
+│   │   │   │   │   │       │   ├── application
+│   │   │   │   │   │       │   └── library
+│   │   │   │   │   │       └── google
+│   │   │   │   │   │           └── android
+│   │   │   │   │   │               └── material
+│   │   │   │   │   ├── migrated-jars
+│   │   │   │   │   └── sdk_index
+│   │   │   │   ├── lintAnalyzeDebugAndroidTest
+│   │   │   │   │   └── migrated-jars
+│   │   │   │   ├── lintAnalyzeDebugUnitTest
+│   │   │   │   ├── lintReportDebug
+│   │   │   │   └── lintVitalAnalyzeRelease
+│   │   │   │       ├── maven.google
+│   │   │   │       │   ├── androidx
+│   │   │   │       │   │   ├── activity
+│   │   │   │       │   │   ├── appcompat
+│   │   │   │       │   │   ├── compose
+│   │   │   │       │   │   │   ├── material3
+│   │   │   │       │   │   │   └── runtime
+│   │   │   │       │   │   ├── core
+│   │   │   │       │   │   ├── lifecycle
+│   │   │   │       │   │   ├── media
+│   │   │   │       │   │   ├── room
+│   │   │   │       │   │   └── test
+│   │   │   │       │   │       ├── espresso
+│   │   │   │       │   │       └── ext
+│   │   │   │       │   └── com
+│   │   │   │       │       ├── android
+│   │   │   │       │       │   ├── application
+│   │   │   │       │       │   └── library
+│   │   │   │       │       └── google
+│   │   │   │       │           └── android
+│   │   │   │       │               └── material
+│   │   │   │       ├── migrated-jars
+│   │   │   │       └── sdk_index
+│   │   │   ├── local_only_symbol_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── parseDebugLocalResources
+│   │   │   │   └── release
+│   │   │   │       └── parseReleaseLocalResources
+│   │   │   ├── manifest_merge_blame_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugMainManifest
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   ├── merged_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseArtProfile
+│   │   │   ├── merged_java_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugJavaResource
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseJavaResource
+│   │   │   ├── merged_jni_libs
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugJniLibFolders
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseJniLibFolders
+│   │   │   │           └── out
+│   │   │   ├── merged_manifest
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugMainManifest
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   ├── merged_manifests
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugManifest
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifest
+│   │   │   ├── merged_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   ├── merged_res_blame_folder
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── multi-v2
+│   │   │   │   │           └── single
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   │               ├── multi-v2
+│   │   │   │               └── single
+│   │   │   ├── merged_shaders
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugShaders
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseShaders
+│   │   │   │           └── out
+│   │   │   ├── merged_startup_profile
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseStartupProfile
+│   │   │   ├── metadata_library_dependencies_report
+│   │   │   │   └── release
+│   │   │   │       └── collectReleaseDependencies
+│   │   │   ├── mixed_scope_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── navigation_json
+│   │   │   │   ├── debug
+│   │   │   │   │   └── extractDeepLinksDebug
+│   │   │   │   └── release
+│   │   │   │       └── extractDeepLinksRelease
+│   │   │   ├── nested_resources_validation_report
+│   │   │   │   ├── debug
+│   │   │   │   │   └── generateDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── generateReleaseResources
+│   │   │   ├── optimized_processed_res
+│   │   │   │   └── release
+│   │   │   │       └── optimizeReleaseResources
+│   │   │   ├── packaged_manifests
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugManifestForPackage
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifestForPackage
+│   │   │   ├── packaged_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       ├── drawable
+│   │   │   │   │       ├── layout
+│   │   │   │   │       ├── mipmap-anydpi-v26
+│   │   │   │   │       ├── mipmap-hdpi-v4
+│   │   │   │   │       ├── mipmap-mdpi-v4
+│   │   │   │   │       ├── mipmap-xhdpi-v4
+│   │   │   │   │       ├── mipmap-xxhdpi-v4
+│   │   │   │   │       ├── mipmap-xxxhdpi-v4
+│   │   │   │   │       ├── values
+│   │   │   │   │       ├── values-v31
+│   │   │   │   │       └── xml
+│   │   │   │   └── release
+│   │   │   │       └── packageReleaseResources
+│   │   │   │           ├── drawable
+│   │   │   │           ├── layout
+│   │   │   │           ├── mipmap-anydpi-v26
+│   │   │   │           ├── mipmap-hdpi-v4
+│   │   │   │           ├── mipmap-mdpi-v4
+│   │   │   │           ├── mipmap-xhdpi-v4
+│   │   │   │           ├── mipmap-xxhdpi-v4
+│   │   │   │           ├── mipmap-xxxhdpi-v4
+│   │   │   │           ├── values
+│   │   │   │           ├── values-v31
+│   │   │   │           └── xml
+│   │   │   ├── project_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   │           └── com
+│   │   │   │   │               └── example
+│   │   │   │   │                   └── melody
+│   │   │   │   │                       ├── adapter
+│   │   │   │   │                       ├── data
+│   │   │   │   │                       ├── service
+│   │   │   │   │                       └── ui
+│   │   │   │   │                           └── theme
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   │               └── com
+│   │   │   │                   └── example
+│   │   │   │                       └── melody
+│   │   │   │                           ├── adapter
+│   │   │   │                           ├── data
+│   │   │   │                           ├── service
+│   │   │   │                           └── ui
+│   │   │   │                               └── theme
+│   │   │   ├── runtime_app_classes_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── bundleDebugClassesToRuntimeJar
+│   │   │   │   └── release
+│   │   │   │       └── bundleReleaseClassesToRuntimeJar
+│   │   │   ├── runtime_symbol_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── sdk_dependency_data
+│   │   │   │   └── release
+│   │   │   │       └── sdkReleaseDependencyData
+│   │   │   ├── signing_config_versions
+│   │   │   │   ├── debug
+│   │   │   │   │   └── writeDebugSigningConfigVersions
+│   │   │   │   └── release
+│   │   │   │       └── writeReleaseSigningConfigVersions
+│   │   │   ├── source_set_path_map
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mapDebugSourceSetPaths
+│   │   │   │   └── release
+│   │   │   │       └── mapReleaseSourceSetPaths
+│   │   │   ├── stable_resource_ids_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── sub_project_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── symbol_list_with_package_name
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── unit_test_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugUnitTestLintModel
+│   │   │   ├── unit_test_lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebugUnitTest
+│   │   │   │           └── out
+│   │   │   ├── validate_signing_config
+│   │   │   │   └── debug
+│   │   │   │       └── validateSigningDebug
+│   │   │   └── version_control_info_file
+│   │   │       └── release
+│   │   │           └── extractReleaseVersionControlInfo
+│   │   ├── kotlin
+│   │   │   ├── compileDebugKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── compileDebugUnitTestKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── compileReleaseKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── compileReleaseUnitTestKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── kaptGenerateStubsDebugKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── kaptGenerateStubsDebugUnitTestKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   ├── kaptGenerateStubsReleaseKotlin
+│   │   │   │   ├── cacheable
+│   │   │   │   │   └── caches-jvm
+│   │   │   │   │       ├── inputs
+│   │   │   │   │       ├── jvm
+│   │   │   │   │       │   └── kotlin
+│   │   │   │   │       └── lookups
+│   │   │   │   ├── classpath-snapshot
+│   │   │   │   └── local-state
+│   │   │   └── kaptGenerateStubsReleaseUnitTestKotlin
+│   │   │       ├── cacheable
+│   │   │       │   └── caches-jvm
+│   │   │       │       ├── inputs
+│   │   │       │       ├── jvm
+│   │   │       │       │   └── kotlin
+│   │   │       │       └── lookups
+│   │   │       ├── classpath-snapshot
+│   │   │       └── local-state
+│   │   ├── kotlinToolingMetadata
+│   │   ├── outputs
+│   │   │   ├── apk
+│   │   │   │   ├── debug
+│   │   │   │   └── release
+│   │   │   │       └── baselineProfiles
+│   │   │   │           ├── 0
+│   │   │   │           └── 1
+│   │   │   ├── logs
+│   │   │   └── sdk-dependencies
+│   │   │       └── release
+│   │   ├── reports
+│   │   │   └── tests
+│   │   │       ├── testDebugUnitTest
+│   │   │       │   ├── classes
+│   │   │       │   ├── css
+│   │   │       │   ├── js
+│   │   │       │   └── packages
+│   │   │       └── testReleaseUnitTest
+│   │   │           ├── classes
+│   │   │           ├── css
+│   │   │           ├── js
+│   │   │           └── packages
+│   │   ├── test-results
+│   │   │   ├── testDebugUnitTest
+│   │   │   │   └── binary
+│   │   │   └── testReleaseUnitTest
+│   │   │       └── binary
+│   │   └── tmp
+│   │       ├── compileDebugJavaWithJavac
+│   │       ├── compileReleaseJavaWithJavac
+│   │       ├── kapt3
+│   │       │   ├── classes
+│   │       │   │   ├── debug
+│   │       │   │   ├── debugUnitTest
+│   │       │   │   ├── release
+│   │       │   │   └── releaseUnitTest
+│   │       │   ├── incApCache
+│   │       │   │   ├── debug
+│   │       │   │   ├── debugUnitTest
+│   │       │   │   ├── release
+│   │       │   │   └── releaseUnitTest
+│   │       │   ├── incrementalData
+│   │       │   │   ├── debug
+│   │       │   │   │   ├── com
+│   │       │   │   │   │   └── example
+│   │       │   │   │   │       └── melody
+│   │       │   │   │   │           ├── adapter
+│   │       │   │   │   │           ├── data
+│   │       │   │   │   │           ├── service
+│   │       │   │   │   │           └── ui
+│   │       │   │   │   │               └── theme
+│   │       │   │   │   └── META-INF
+│   │       │   │   ├── debugUnitTest
+│   │       │   │   │   ├── com
+│   │       │   │   │   │   └── example
+│   │       │   │   │   │       └── melody
+│   │       │   │   │   └── META-INF
+│   │       │   │   ├── release
+│   │       │   │   │   ├── com
+│   │       │   │   │   │   └── example
+│   │       │   │   │   │       └── melody
+│   │       │   │   │   │           ├── adapter
+│   │       │   │   │   │           ├── data
+│   │       │   │   │   │           ├── service
+│   │       │   │   │   │           └── ui
+│   │       │   │   │   │               └── theme
+│   │       │   │   │   └── META-INF
+│   │       │   │   └── releaseUnitTest
+│   │       │   │       ├── com
+│   │       │   │       │   └── example
+│   │       │   │       │       └── melody
+│   │       │   │       └── META-INF
+│   │       │   └── stubs
+│   │       │       ├── debug
+│   │       │       │   ├── com
+│   │       │       │   │   └── example
+│   │       │       │   │       └── melody
+│   │       │       │   │           ├── adapter
+│   │       │       │   │           ├── data
+│   │       │       │   │           ├── service
+│   │       │       │   │           └── ui
+│   │       │       │   │               └── theme
+│   │       │       │   └── error
+│   │       │       ├── debugUnitTest
+│   │       │       │   ├── com
+│   │       │       │   │   └── example
+│   │       │       │   │       └── melody
+│   │       │       │   └── error
+│   │       │       ├── release
+│   │       │       │   ├── com
+│   │       │       │   │   └── example
+│   │       │       │   │       └── melody
+│   │       │       │   │           ├── adapter
+│   │       │       │   │           ├── data
+│   │       │       │   │           ├── service
+│   │       │       │   │           └── ui
+│   │       │       │   │               └── theme
+│   │       │       │   └── error
+│   │       │       └── releaseUnitTest
+│   │       │           ├── com
+│   │       │           │   └── example
+│   │       │           │       └── melody
+│   │       │           └── error
+│   │       ├── kotlin-classes
+│   │       │   ├── debug
+│   │       │   │   ├── com
+│   │       │   │   │   └── example
+│   │       │   │   │       └── melody
+│   │       │   │   │           ├── adapter
+│   │       │   │   │           ├── data
+│   │       │   │   │           ├── service
+│   │       │   │   │           └── ui
+│   │       │   │   │               └── theme
+│   │       │   │   └── META-INF
+│   │       │   ├── debugUnitTest
+│   │       │   │   ├── com
+│   │       │   │   │   └── example
+│   │       │   │   │       └── melody
+│   │       │   │   └── META-INF
+│   │       │   ├── release
+│   │       │   │   ├── com
+│   │       │   │   │   └── example
+│   │       │   │   │       └── melody
+│   │       │   │   │           ├── adapter
+│   │       │   │   │           ├── data
+│   │       │   │   │           ├── service
+│   │       │   │   │           └── ui
+│   │       │   │   │               └── theme
+│   │       │   │   └── META-INF
+│   │       │   └── releaseUnitTest
+│   │       │       ├── com
+│   │       │       │   └── example
+│   │       │       │       └── melody
+│   │       │       └── META-INF
+│   │       ├── testDebugUnitTest
+│   │       └── testReleaseUnitTest
+│   └── src
+│       ├── androidTest
+│       │   └── java
+│       │       └── com
+│       │           └── example
+│       │               └── melody
+│       ├── main
+│       │   ├── java
+│       │   │   └── com
+│       │   │       └── example
+│       │   │           └── melody
+│       │   │               ├── adapter
+│       │   │               ├── data
+│       │   │               ├── service
+│       │   │               └── ui
+│       │   │                   └── theme
+│       │   └── res
+│       │       ├── drawable
+│       │       ├── layout
+│       │       ├── mipmap-anydpi-v26
+│       │       ├── mipmap-hdpi
+│       │       ├── mipmap-mdpi
+│       │       ├── mipmap-xhdpi
+│       │       ├── mipmap-xxhdpi
+│       │       ├── mipmap-xxxhdpi
+│       │       ├── values
+│       │       ├── values-v31
+│       │       └── xml
+│       └── test
+│           └── java
+│               └── com
+│                   └── example
+│                       └── melody
+├── backend
+│   ├── build
+│   │   ├── distributions
+│   │   ├── libs
+│   │   ├── scripts
+│   │   ├── scriptsShadow
+│   │   └── tmp
+│   │       ├── jar
+│   │       └── shadowJar
+│   ├── database
+│   ├── models
+│   ├── plugins
+│   ├── routes
+│   └── services
+├── build
+│   └── reports
+│       └── problems
+└── gradle
+    └── wrapper
+
+1150 directories

@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme for API 21+ -->
-    <style name="Theme.Melody" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color -->
-        <item name="colorPrimary">@color/melody_primary</item>
-        <item name="colorOnPrimary">@color/melody_on_primary</item>
-        <item name="colorPrimaryContainer">@color/melody_primary_container</item>
-        <item name="colorOnPrimaryContainer">@color/melody_on_primary_container</item>
-
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/melody_secondary</item>
-        <item name="colorOnSecondary">@color/melody_on_secondary</item>
-        <item name="colorSecondaryContainer">@color/melody_secondary_container</item>
-        <item name="colorOnSecondaryContainer">@color/melody_on_secondary_container</item>
-
-        <!-- Surface colors -->
-        <item name="colorSurface">@color/melody_surface</item>
-        <item name="colorOnSurface">@color/melody_on_surface</item>
-
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/melody_primary</item>
-        <item name="android:navigationBarColor">@color/melody_surface</item>
-
-        <!-- Enable window content transitions -->
-        <item name="android:windowContentTransitions">true</item>
+    <!-- Basic theme using Android's built-in themes -->
+    <style name="Theme.Melody" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Compose will handle all theming -->
     </style>
 </resources>

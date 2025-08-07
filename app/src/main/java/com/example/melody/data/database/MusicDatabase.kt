@@ -1,29 +1,30 @@
-package com.example.melody.data
+package com.example.melody.data.database
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import android.content.Context
+import com.example.melody.data.Song
 
 @Database(
     entities = [Song::class],
     version = 1,
     exportSchema = false
 )
-abstract class MelodyDatabase : RoomDatabase() {
+abstract class MusicDatabase : RoomDatabase() {
 
     abstract fun songDao(): SongDao
 
     companion object {
         @Volatile
-        private var INSTANCE: MelodyDatabase? = null
+        private var INSTANCE: MusicDatabase? = null
 
-        fun getDatabase(context: Context): MelodyDatabase {
+        fun getDatabase(context: Context): MusicDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    MelodyDatabase::class.java,
-                    "melody_database"
+                    MusicDatabase::class.java,
+                    "music_database"
                 ).build()
                 INSTANCE = instance
                 instance

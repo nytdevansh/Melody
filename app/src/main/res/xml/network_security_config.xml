@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Replace with your actual backend domain -->
+        <domain includeSubdomains="true">your-backend-domain.com</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain> <!-- Android emulator localhost -->
+        <domain includeSubdomains="true">192.168.1.100</domain> <!-- Replace with your local IP -->
+    </domain-config>
+
+    <!-- Allow HTTPS connections to B2 storage -->
+    <domain-config>
+        <domain includeSubdomains="true">f005.backblazeb2.com</domain>
+        <domain includeSubdomains="true">f004.backblazeb2.com</domain>
+        <domain includeSubdomains="true">f003.backblazeb2.com</domain>
+        <domain includeSubdomains="true">f002.backblazeb2.com</domain>
+        <domain includeSubdomains="true">f001.backblazeb2.com</domain>
+        <domain includeSubdomains="true">f000.backblazeb2.com</domain>
+        <!-- Add your CDN domain if you have one -->
+        <!-- <domain includeSubdomains="true">cdn.yourdomain.com</domain> -->
+    </domain-config>
+</network-security-config>

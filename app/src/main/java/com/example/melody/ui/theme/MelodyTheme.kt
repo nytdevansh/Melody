@@ -16,67 +16,90 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-// Custom color palette for music app
+// Light color scheme optimized for music app
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF6750A4),
-    onPrimary = Color(0xFFFFFFFF),
+    primary = MusicPrimary,
+    onPrimary = Color.White,
     primaryContainer = Color(0xFFEADDFF),
     onPrimaryContainer = Color(0xFF21005D),
-    secondary = Color(0xFF625B71),
-    onSecondary = Color(0xFFFFFFFF),
+
+    secondary = MusicSecondary,
+    onSecondary = Color.White,
     secondaryContainer = Color(0xFFE8DEF8),
     onSecondaryContainer = Color(0xFF1D192B),
-    tertiary = Color(0xFF7D5260),
-    onTertiary = Color(0xFFFFFFFF),
+
+    tertiary = MusicTertiary,
+    onTertiary = Color.White,
     tertiaryContainer = Color(0xFFFFD8E4),
     onTertiaryContainer = Color(0xFF31111D),
+
     error = Color(0xFFBA1A1A),
-    onError = Color(0xFFFFFFFF),
+    onError = Color.White,
     errorContainer = Color(0xFFFFDAD6),
     onErrorContainer = Color(0xFF410002),
-    background = Color(0xFFFFFBFE),
+
+    background = SurfaceLight,
     onBackground = Color(0xFF1C1B1F),
-    surface = Color(0xFFFFFBFE),
+    surface = SurfaceLight,
     onSurface = Color(0xFF1C1B1F),
-    surfaceVariant = Color(0xFFE7E0EC),
+    surfaceVariant = SurfaceVariantLight,
     onSurfaceVariant = Color(0xFF49454F),
+
+    // Enhanced surface containers for better music player UI
+    surfaceContainer = Color(0xFFF3EDF7),
+    surfaceContainerHigh = Color(0xFFEDE7F0),
+    surfaceContainerHighest = Color(0xFFE6E0E9),
+
     outline = Color(0xFF79747E),
     outlineVariant = Color(0xFFCAC4D0),
     scrim = Color(0xFF000000),
+
     inverseSurface = Color(0xFF313033),
     inverseOnSurface = Color(0xFFF4EFF4),
-    inversePrimary = Color(0xFFD0BCFF)
+    inversePrimary = MusicPrimaryDark
 )
 
+// Dark color scheme optimized for music app
 private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFFD0BCFF),
+    primary = MusicPrimaryDark,
     onPrimary = Color(0xFF381E72),
     primaryContainer = Color(0xFF4F378B),
     onPrimaryContainer = Color(0xFFEADDFF),
-    secondary = Color(0xFFCCC2DC),
+
+    secondary = MusicSecondaryDark,
     onSecondary = Color(0xFF332D41),
     secondaryContainer = Color(0xFF4A4458),
     onSecondaryContainer = Color(0xFFE8DEF8),
-    tertiary = Color(0xFFEFB8C8),
+
+    tertiary = MusicTertiaryDark,
     onTertiary = Color(0xFF492532),
     tertiaryContainer = Color(0xFF633B48),
     onTertiaryContainer = Color(0xFFFFD8E4),
+
     error = Color(0xFFFFB4AB),
     onError = Color(0xFF690005),
     errorContainer = Color(0xFF93000A),
     onErrorContainer = Color(0xFFFFDAD6),
-    background = Color(0xFF1C1B1F),
+
+    background = SurfaceDark,
     onBackground = Color(0xFFE6E1E5),
-    surface = Color(0xFF1C1B1F),
+    surface = SurfaceDark,
     onSurface = Color(0xFFE6E1E5),
-    surfaceVariant = Color(0xFF49454F),
+    surfaceVariant = SurfaceVariantDark,
     onSurfaceVariant = Color(0xFFCAC4D0),
+
+    // Enhanced surface containers for dark theme
+    surfaceContainer = Color(0xFF211F26),
+    surfaceContainerHigh = Color(0xFF2B2930),
+    surfaceContainerHighest = Color(0xFF36343B),
+
     outline = Color(0xFF938F99),
     outlineVariant = Color(0xFF49454F),
     scrim = Color(0xFF000000),
+
     inverseSurface = Color(0xFFE6E1E5),
     inverseOnSurface = Color(0xFF313033),
-    inversePrimary = Color(0xFF6750A4)
+    inversePrimary = MusicPrimary
 )
 
 @Composable
@@ -91,7 +114,6 @@ fun MelodyTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
@@ -100,8 +122,15 @@ fun MelodyTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            // Set status bar color to be transparent/system
+            window.statusBarColor = Color.Transparent.toArgb()
+            // Set navigation bar color
+            window.navigationBarColor = colorScheme.surface.toArgb()
+
+            val windowInsetsController = WindowCompat.getInsetsController(window, view)
+            // Light status bar for dark theme, dark status bar for light theme
+            windowInsetsController.isAppearanceLightStatusBars = !darkTheme
+            windowInsetsController.isAppearanceLightNavigationBars = !darkTheme
         }
     }
 
