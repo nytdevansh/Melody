@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 object NetworkModule {
 
     // Replace with your actual backend URL
-    private const val BASE_URL = "https://your-backend-url.com/" // TODO: Replace with your actual backend URL
+    private const val BASE_URL = "https://ktor-backend-c282.onrender.com/" // TODO: Replace with your actual backend URL
 
     private val json = Json {
         ignoreUnknownKeys = true
