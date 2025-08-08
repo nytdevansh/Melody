@@ -13,6 +13,9 @@ version = "1.0.0"
 application {
     mainClass.set("com.melody.backend.ApplicationKt")
 }
+kotlin {
+    jvmToolchain(21)
+}
 
 dependencies {
     // Ktor Server
@@ -62,7 +65,7 @@ dependencies {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = "21"
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
